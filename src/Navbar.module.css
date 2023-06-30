@@ -1,0 +1,39 @@
+.navbar {
+    height: 70px;
+    /* background: linear-gradient(to right, purple, red); */
+    background-color: #116A7B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.carticoncontainer {
+    position: relative;
+    cursor: "pointer";
+}
+
+.carticon {
+    height: 48px;
+    margin-right: 20px;
+}
+
+.cartcount {
+    background: yellow;
+    border-radius: 50%;
+    padding: 4px 8px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    font-size: 12px;
+    /* visibility: ${(props) => props.show?"visible": "hidden"};    */
+}
