@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/binge_flix/static/css/main.b4b30859.css",
+    "main.js": "/binge_flix/static/js/main.96ce27ff.js",
+    "index.html": "/binge_flix/index.html",
+    "main.b4b30859.css.map": "/binge_flix/static/css/main.b4b30859.css.map",
+    "main.96ce27ff.js.map": "/binge_flix/static/js/main.96ce27ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4b30859.css",
+    "static/js/main.96ce27ff.js"
+  ]
+}
