@@ -1,7 +1,6 @@
 {
   "name": "movie-app",
   "version": "0.1.0",
-  "homepage": "https://shaileshrawat3321.github.io/binge_flix",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
