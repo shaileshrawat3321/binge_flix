@@ -7,122 +7,349 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f1f1f1;
 }
+
+/* Responsive container - Mobile first approach */
 .main {
-  width: 70%;
+  width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-top: 30px;
-  padding: 0 20px;
+  margin-top: 20px;
+  padding: 0 10px;
   box-sizing: border-box;
-  /* background-color: #C2DEDC; */
 }
+
+/* Movie card - Mobile first (stacked layout) */
 .movie-card {
   background-color: #C2DEDC;
   padding: 0;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+
 .movie-card:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 15px;
 }
+
 .movie-card:last-child {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
+
+/* Left section (poster) - Mobile */
 .movie-card .left {
-  flex: 1;
-  padding: 5px
+  flex: none;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .movie-card .left img {
-  height: 250px;
-  
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Right section (content) - Mobile */
 .movie-card .right {
   position: relative;
-  flex: 10;
+  flex: 1;
+  min-height: 200px;
+  padding-bottom: 80px;
 }
+
 .movie-card .title {
-  padding: 10px 20px;
-  font-size: 25px;
+  padding: 15px 20px 10px;
+  font-size: 1.4rem;
   font-weight: 600;
+  line-height: 1.3;
 }
+
 .movie-card .plot {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
+
 .movie-card .price {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0 20px;
   font-weight: 500;
-  color: rgb(0, 75, 0)
+  color: rgb(0, 75, 0);
+  font-size: 1.1rem;
 }
+/* Footer - Mobile first */
 .footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  
-  width: 100%;
-  padding: 10px 20px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 20px;
   box-sizing: border-box;
+  background-color: rgba(194, 222, 220, 0.9);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* Rating and stars section */
 .footer .rating {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
-  flex:1
+  text-align: center;
 }
 
-.footer .stars{
-  width: 20px;
-  height: 20px;
-}
 .footer .star-dis {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
   font-weight: 600;
-  flex:1;
-  position: relative;
 }
 
-footer.starCount {
-  font-size: 20px;
-  font-weight: 600;
-  position:absolute;
-  left: 50;
+.footer .stars {
+  width: 18px;
+  height: 18px;
 }
 
 .footer .str-btn {
-  width: 7px;
-  height: 7px
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
+
+.footer .str-btn:hover {
+  transform: scale(1.1);
+}
+
+.footer .starCount {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Buttons - Mobile first */
 .footer button {
-  font-size: 15px;
-  padding: 7px 10px;
+  font-size: 0.85rem;
+  padding: 8px 12px;
   text-shadow: none;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
   font-weight: 600;
- 
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-height: 40px;
 }
+
+.footer button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer button:active {
+  transform: translateY(0);
+}
+
 .favourite-btn {
   background-color: #bc16dd;
   color: #fff;
-  margin: 5px;
+  margin: 2px;
 }
-.cart-btn{
 
+.cart-btn {
   background-color: #251bb1;
   color: #fff;
-  margin: 5px;
-    
+  margin: 2px;
 }
+
 .unfavourite-btn {
   background-color: #db2828;
   color: #fff;
   text-shadow: none;
-  margin: 5px;
+  margin: 2px;
 }
 
 .removeCart-btn {
   background-color: #db2828;
   color: #fff;
   text-shadow: none;
-  margin: 5px;
+  margin: 2px;
+}
+
+/* Button container for mobile */
+.footer .button-group {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet styles (768px and up) */
+@media (min-width: 768px) {
+  .main {
+    width: 90%;
+    margin-top: 25px;
+    padding: 0 15px;
+  }
+
+  .movie-card {
+    flex-direction: row;
+    min-height: 280px;
+  }
+
+  .movie-card .left {
+    flex: 0 0 200px;
+    padding: 20px;
+  }
+
+  .movie-card .left img {
+    width: 100%;
+    max-width: none;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .movie-card .right {
+    flex: 1;
+    padding-bottom: 100px;
+  }
+
+  .movie-card .title {
+    font-size: 1.6rem;
+    padding: 20px 25px 15px;
+  }
+
+  .movie-card .plot {
+    padding: 0 25px;
+    font-size: 1rem;
+  }
+
+  .movie-card .price {
+    padding: 0 25px;
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+  }
+
+  .footer .rating {
+    flex: 0 0 auto;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .footer .star-dis {
+    flex: 0 0 auto;
+    gap: 10px;
+  }
+
+  .footer button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    flex: 0 0 auto;
+    min-width: 120px;
+  }
+}
+
+/* Desktop styles (1024px and up) */
+@media (min-width: 1024px) {
+  .main {
+    width: 80%;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .movie-card:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .movie-card:last-child {
+    margin-bottom: 40px;
+  }
+
+  .movie-card .left {
+    flex: 0 0 220px;
+    padding: 25px;
+  }
+
+  .movie-card .left img {
+    height: 260px;
+  }
+
+  .movie-card .title {
+    font-size: 1.8rem;
+    padding: 25px 30px 15px;
+  }
+
+  .movie-card .plot {
+    padding: 0 30px;
+    font-size: 1.05rem;
+  }
+
+  .movie-card .price {
+    padding: 0 30px;
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    padding: 20px 30px;
+    gap: 20px;
+  }
+
+  .footer .rating {
+    font-size: 1.2rem;
+  }
+
+  .footer button {
+    font-size: 1rem;
+    padding: 10px 18px;
+    min-width: 140px;
+  }
+
+  .footer button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Large desktop styles (1200px and up) */
+@media (min-width: 1200px) {
+  .main {
+    width: 70%;
+  }
+
+  .movie-card .left {
+    flex: 0 0 240px;
+  }
+
+  .movie-card .left img {
+    height: 280px;
+  }
+
+  .movie-card .title {
+    font-size: 2rem;
+  }
+
+  .movie-card .plot {
+    font-size: 1.1rem;
+  }
+
+  .movie-card .price {
+    font-size: 1.4rem;
+  }
 }
